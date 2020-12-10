@@ -71,7 +71,7 @@ function deletePost(evt) {
     })
     .then(response => response.json())
     .then(response => {
-        console.log(response);
+        updateDeleted(evt, response);
     })
     .catch(error => {
         console.log("Error: ", error);
@@ -216,6 +216,19 @@ function fetchPosts(postbox, start, end) {
 }
 
 // ------------- Elements updates -----------------
+
+// Remove deleted post from page
+function updateDeleted(evt, msg) {
+    console.log(evt);
+    console.log(msg);
+
+    post = evt.target.parentElement.parentElement.parentElement;
+    post.remove();
+
+    document.querySelector('.msg').innerHTML = msg.msg;
+    // document.querySelector('.msg').display
+
+}
 
 // Update heart and likes after clicking to like
 function updateLike(evt, response) {

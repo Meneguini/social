@@ -23,7 +23,7 @@ def delete_post(request):
     except:
         return JsonResponse({"error": "Post not deleted!"}, status=400)
 
-    return JsonResponse({"msg": "deleted"}, status=200)
+    return JsonResponse({"msg": "Post deleted!"}, status=200)
 
 
 @login_required
