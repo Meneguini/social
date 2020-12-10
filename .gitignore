@@ -1,2 +1,5 @@
 socialNetwork/.env
 .env
+db.sqlite3
+network/migrations
+migrations
