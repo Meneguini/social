@@ -242,6 +242,17 @@ nav {
     border-radius: 5px;
 }
 
-.previous {
-    margin-bottom: -5%;
+/* Footer */
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #f7ea5f;
+    bottom: 0;
+    padding: 1%;
+    justify-items: center;
+}
+
+.icons {
+    font-size: 0.9rem;
 }

@@ -421,8 +421,8 @@ function displayPosts(postbox, posts) {
     
     if (posts.previous_page) {
         const previous = document.createElement('button');
-        previous.innerHTML = 'Previous';
-        previous.className = 'btn btn-primary previous';
+        previous.innerHTML = 'Back';
+        previous.className = 'btn btn-primary';
         previous.addEventListener('click', () => previousPage(postbox, posts.start));
         document.querySelector('#posts-container').append(previous);
     }
