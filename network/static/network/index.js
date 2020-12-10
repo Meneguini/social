@@ -54,8 +54,31 @@ document.addEventListener('DOMContentLoaded', function () {
 //------------ All Fetchs ------------
 
 function deletePost(evt) {
-    console.log("clicked");
-    console.log(evt.target);
+
+    console.log(evt.target.parentElement.parentElement.children[2].innerHTML);
+
+    const csrftoken = getCookie('csrftoken');
+
+    fetch(`/delete_post`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,
+        },
+        body: JSON.stringify({
+            // Using the event target to get the post id
+            post_id: evt.target.parentElement.parentElement.children[2].innerHTML
+        })
+    })
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log("Error: ", error);
+    });
+
+    return false;
+
 }
 
 function likePost(evt, like) {

@@ -10,6 +10,22 @@ from .models import User, Post, Follow, Like
 from . import utils
 import json
 
+
+@login_required
+def delete_post(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Request must be POST."}, status=400)
+
+    data = json.loads(request.body)
+    
+    try:
+        post = Post.objects.filter(pk=data["post_id"]).delete()
+    except:
+        return JsonResponse({"error": "Post not deleted!"}, status=400)
+
+    return JsonResponse({"msg": "deleted"}, status=200)
+
+
 @login_required
 def like(request, status):
     if request.method != "PUT":

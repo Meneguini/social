@@ -17,5 +17,6 @@ urlpatterns = [
     path("following", views.following, name="following"),
     path("post", views.post, name="post"),
     path("like/<str:status>", views.like, name="like"),
-    path("profile/profile/<str:username>", views.profile, name="profile/profile")
+    path("profile/profile/<str:username>", views.profile, name="profile/profile"),
+    path("delete_post", views.delete_post, name="delete_post")
 ]
