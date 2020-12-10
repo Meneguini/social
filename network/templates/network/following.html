@@ -1,0 +1,54 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div id="following-page">
+        <div id="followed-posts">
+
+            <h3 class="following-title">Following:</h3>
+            
+            <!-- From django paginator -->
+            {% for post in page_obj %}
+                <div class="post-container">
+                    <div id="post-parent">
+                        <a href="profile/{{ post.writer.username }}" class="name-following name">{{ post.writer.username.capitalize }}</a>
+                        <p>{{ post.content.capitalize }}</p>
+                        <p style="display: none;">{{ post.id }}</p>
+
+                        <div class="likes-datetime-edit">
+                            {% if user.is_authenticated %}
+                                {% if post.liked %}
+                                    <img id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img style="display: none;" id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+                                {% else %}
+
+                                    <img style="display: none;" id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+
+                                {% endif %}
+                            {% endif %}
+                            <p>{{ post.likes_number }}</p>
+                            <p>{{ post.datetime }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+    
+                {% if page_obj.has_next %}
+                    <a class="btn btn-primary" id="btn-next" href="?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}

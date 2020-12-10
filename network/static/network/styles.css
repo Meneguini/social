@@ -1,0 +1,242 @@
+/* ------------- Nav ------------*/
+nav {
+    height: 5rem;
+    padding: 4%;
+    background-color: #0c6291;
+    font-size: 110%;
+}
+
+.navbar-brand {
+    font-size: 180%;
+    margin-right: 3%;
+    margin-left: 1%;
+    color: white;
+    margin-bottom: 0.4%;
+}
+
+.navbar-brand:hover {
+    color: #A1D2CE;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #A1D2CE;
+}
+
+
+/* Margin of all pages */
+#index-page, #profile-page, #following-page {
+    padding: 1%;
+}
+/* buttons */
+.btn-primary {
+    background-color: #0c6291;
+    border-color: #0c6291;
+    border-radius: 50%;
+}
+/* ------------- Index -------------- */
+
+#login-msg {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* New Post Form */
+#new-post-container {
+    padding: 1%;
+    width: 90%;
+    margin-left: 5%;
+    background-color:  #FEEA00;
+    border-radius: 10px;
+}
+
+#new-post-content {
+    border-radius: 30px;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+#btn-new-post {
+    margin-top: 0.5%;
+    margin-left: 94%;
+}
+
+#title {
+    color: #0c6291;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
+#posts-container {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* ------------- Post --------------- */
+
+.post-container {
+    border: 3px solid #78CAD2;
+    width: 80%;
+    border-radius: 30px;
+    margin: 1%;
+    padding: 0.2%;
+    padding-left: 3%;
+    margin-left: 10%;
+}
+
+.post-container:hover {
+    transform: scale(1.01);
+    transition: 1s;
+}
+
+#post-parent {
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-gap: 8px;
+}
+
+.name-del-btn {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* align-items: center; */
+}
+
+.del-btn {
+    justify-self: end;
+    margin: 2%;
+}
+
+.name {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #0056b3;
+}
+
+.likes-datetime-edit {
+    display: grid;
+    grid-template-columns: 3% 5% 70% auto;
+    grid-gap: 10px;
+}
+
+.likes {
+    color: grey;
+}
+
+.likes-number {
+    margin-left: 10%;
+}
+
+.datetime {
+    text-align: center;
+}
+
+.edit {
+    justify-self: end;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
+#textarea-edit {
+    margin: 1%;
+    display: none;
+}
+
+#content-textarea {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    border-color: #FEEA00;
+    padding: 5px;
+}
+
+#btn-next {
+    margin-left: 95%;
+}
+
+.next { 
+    margin-left: 90%;
+}
+
+/* -------------- Profile -------------- */
+
+.user-container {
+    padding: 1%;
+    margin-bottom: 3%;
+    text-align: center;
+    height: 170px;
+    background-color: #f7ea5f;
+    border-radius: 10px;
+}
+
+#profile-name {
+    color: #0c6291;
+    font-size: 3rem;
+}
+
+.follows-container {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.follows-container p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: lightslategrey;
+}
+
+#nm-profile {
+    color: #0056b3;
+}
+
+/* ---------- Following Page ---------- */
+
+.following-title {
+    background-color: #f7ea5f;
+    text-align: center;
+    padding-top: 1%;
+    height: 100px;
+}
+
+/* ----- login ------- */
+
+#login-title, #register-title {
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+
+#form-login, #form-register {
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+}
+
+#register-here, #login-here {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.btn-login {
+    margin-top: 2%;
+}
+
+/* Msg */
+
+.msg {
+    background-color: lightgreen;
+    opacity: 0.5;
+    text-align: center;
+    margin-bottom: 1%;
+    color: black;
+    border-radius: 5px;
+}
+
+.previous {
+    margin-bottom: -5%;
+}

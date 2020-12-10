@@ -1,0 +1,86 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    
+    <div id="index-page">
+        <div class="msg"></div>
+        <div id="new-post-container">
+            {% if user.is_authenticated %}
+
+                <form id="new-post" class="form-group">
+                    <textarea class="form-control" id="new-post-content" placeholder="Write your post here!"></textarea>
+                    <input type="submit" id="btn-new-post" class="btn btn-primary" value="Post">
+                </form>
+            
+            {% endif %}
+            {% if not user.is_authenticated %}
+                <div id="login-msg">
+                    <span ><a href="{% url 'login' %}">Log in</a> to see more!</span>
+                </div>
+            {% endif %}
+        </div>
+        <h3 id="title">All Posts</h3>  
+        <div id="posts-container">
+ 
+            {% for post in posts %}
+                <div class="post-container">
+                    <div id="post-parent">
+                        <div class="name-del-btn">
+                            <a href="profile/{{ post.writer.username }} " class="name">{{ post.writer.username.capitalize }}</a>
+                            {% if user.username == post.writer.username %}
+                                <img class="del-btn" src="{% static 'network/cross.png' %}" alt="cross" width="25" height="25">
+                            {% endif %}
+                        </div>
+                        <p>{{ post.content.capitalize }}</p>
+
+                        <p style="display: none;">{{ post.id }}</p>
+
+                        <div class="likes-datetime-edit">
+                            {% if user.is_authenticated %}
+                                {% if post.liked %}
+                                <!-- Icons made by <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+                                <!-- Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+                                    <img id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img style="display: none;" id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+                                {% else %}
+
+                                    <img style="display: none;" id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+
+                                {% endif %}
+                            {% else %}
+                                <p class="likes">Likes:</p>
+                            {% endif %}
+                    
+                            <p class="likes-number"> {{ post.likes_number }}</p>
+                            <p class="datetime">{{ post.datetime }}</p>
+                            {% if user.username == post.writer.username %}
+                                <button class="btn btn-primary edit" id="btn-edit">Edit</button>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                    {% if user.username == post.writer.username %}
+                        <div id="textarea-edit">
+                            <textarea id="content-textarea"></textarea>
+                            <span style="display:none">{{ post.id }}</span>
+                            <button  class="btn btn-primary" id="btn-save">Save</button>
+                        </div> 
+                    {% endif %}
+                </div> 
+
+            {% endfor %} 
+            
+            {% if pages %}
+                <button class="btn btn-primary" id="btn-next">Next</button>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}

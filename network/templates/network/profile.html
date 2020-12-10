@@ -1,0 +1,69 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div id="profile-page">
+        <div class="user-container">
+            <h3 id="profile-name">{{ profile.username.capitalize }}</h3>
+            <div class="follows-container">
+                <p id="following">Following: {{ profile.following_number }}</p>
+                <p id="follower">Followers: {{ profile.follower_number }}</p>
+            </div>
+            {% if user.is_authenticated and not owner %}
+                <div id="follow"> 
+                    <button class="btn btn-primary btn-follow">{% if follow %}Unfollow{% else %}Follow{% endif %}</button> 
+                </div>
+            {% endif %}
+        </div>
+        <div id="posts-container">
+    
+            {% for post in posts %}
+                <div class="post-container">
+                    <div id="post-parent">
+                        <a id="nm-profile" class="name">{{ post.writer.username.capitalize }}</a>
+                        <p>{{ post.content.capitalize }}</p>
+                        <p style="display: none;">{{ post.id }}</p>
+
+                        <div class="likes-datetime-edit">
+                            {% if user.is_authenticated %}
+                                {% if post.liked %}
+                                    <img id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img style="display: none;" id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+                                {% else %}
+
+                                    <img style="display: none;" id="full-heart" src="{% static 'network/heart(2).png' %}" alt="heart" width="30" height="30">
+                                    <img id="empty-heart" src="{% static 'network/heart(3).png' %}" alt="heart" width="30" height="30">
+
+                                {% endif %}
+                            {% else %}
+                                <p class="likes">Likes:</p>
+                            {% endif %}
+                            <p>{{ post.likes_number }}</p>
+                            <p>{{ post.datetime }}</p>
+                            {% if user.username == post.writer.username %}
+                                <button class="btn btn-primary edit" id="btn-edit">edit</button>
+                            {% endif %}
+                        </div>
+                        
+
+
+                    </div>
+                    {% if user.username == post.writer.username %}
+                        <div id="textarea-edit">
+                            <textarea id="content-textarea" cols="50" rows="5">{{ post.content }}</textarea>
+                            <span style="display:none">{{ post.id }}</span>
+                            <button class="btn btn-primary" id="btn-save">Save</button>
+                        </div> 
+                    {% endif %}
+                </div>   
+            {% endfor %}  
+            {% if pages %}
+                <button class="btn btn-primary" id="btn-next">Next</button>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}
