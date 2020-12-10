@@ -1,4 +1,10 @@
 /* ------------- Nav ------------*/
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 5%;
+}
+
 nav {
     height: 5rem;
     padding: 4%;
@@ -164,6 +170,7 @@ nav {
 
 .next { 
     margin-left: 90%;
+
 }
 
 /* -------------- Profile -------------- */
@@ -249,10 +256,23 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     background-color: #f7ea5f;
     bottom: 0;
+    width: 100%;
     padding: 1%;
     justify-items: center;
+
+    position: absolute;
+
 }
 
 .icons {
     font-size: 0.9rem;
+}
+
+/* Responsive for small devices */
+
+@media screen and (max-width: 600px) {
+    nav {
+        /* font-size: 200%; */
+        font-size: 500px;
+    }
 }
