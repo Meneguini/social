@@ -43,7 +43,7 @@
                             {% else %}
                                 <p class="likes">Likes:</p>
                             {% endif %}
-                            <p>{{ post.likes_number }}</p>
+                            <p class="likes-number">{{ post.likes_number }}</p>
                             <p>{{ post.datetime }}</p>
                             {% if user.username == post.writer.username %}
                                 <button class="btn btn-primary edit" id="btn-edit">edit</button>

@@ -5,7 +5,7 @@
     <div id="following-page">
         <div id="followed-posts">
 
-            <h3 class="following-title">Following:</h3>
+            <h3 class="following-title">What your friends are saying:</h3>
             
             <!-- From django paginator -->
             {% for post in page_obj %}
@@ -27,7 +27,7 @@
 
                                 {% endif %}
                             {% endif %}
-                            <p>{{ post.likes_number }}</p>
+                            <p class="likes-number">{{ post.likes_number }}</p>
                             <p>{{ post.datetime }}</p>
                         </div>
                     </div>

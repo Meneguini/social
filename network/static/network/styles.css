@@ -172,14 +172,14 @@ nav {
     padding: 1%;
     margin-bottom: 3%;
     text-align: center;
-    height: 170px;
+    height: 150px;
     background-color: #f7ea5f;
     border-radius: 10px;
 }
 
 #profile-name {
     color: #0c6291;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .follows-container {
@@ -201,9 +201,10 @@ nav {
 /* ---------- Following Page ---------- */
 
 .following-title {
+    font-size: 1.5rem;
     background-color: #f7ea5f;
     text-align: center;
-    padding-top: 1%;
+    padding-top: 3%;
     height: 100px;
 }
 
