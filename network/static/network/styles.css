@@ -2,10 +2,10 @@
 body {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 5%;
+    padding-bottom: 6%;
 }
 
-nav {
+.navbar {
     height: 5rem;
     padding: 4%;
     background-color: #0c6291;
@@ -271,8 +271,8 @@ nav {
 /* Responsive for small devices */
 
 @media screen and (max-width: 600px) {
-    nav {
-        /* font-size: 200%; */
+    #nav-resp {
+        height: 50vw;
         font-size: 500px;
     }
 }
