@@ -20,7 +20,12 @@
             {% for post in posts %}
                 <div class="post-container">
                     <div id="post-parent">
-                        <a id="nm-profile" class="name">{{ post.writer.username.capitalize }}</a>
+                        <div class="name-del-btn">
+                            <a id="nm-profile" class="name">{{ post.writer.username.capitalize }}</a>
+                            {% if user.username == post.writer.username %}
+                                <img class="del-btn" src="{% static 'network/cross.png' %}" alt="cross" width="25" height="25">
+                            {% endif %}
+                        </div>
                         <p>{{ post.content.capitalize }}</p>
                         <p style="display: none;">{{ post.id }}</p>
 

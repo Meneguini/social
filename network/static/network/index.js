@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    if (document.querySelector('.del-btn')) {
+        document.querySelectorAll('.del-btn').forEach(del => {
+            del.addEventListener('click', event => { deletePost(event); });
+        })
+    }
+
     // If there is a new-post div means you are logged in and in the index page 
     if(document.querySelector('#new-post')){
         addPost();
@@ -46,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //------------ All Fetchs ------------
+
+function deletePost(evt) {
+    console.log("clicked");
+    console.log(evt.target);
+}
 
 function likePost(evt, like) {
 
@@ -258,6 +269,9 @@ function displayPosts(postbox, posts) {
         // div for likes and datetime
         const divLikesDate = document.createElement('div');
         divLikesDate.className = 'likes-datetime-edit';
+        // div for Name and delete post button
+        const writerBtndel = document.createElement('div');
+        writerBtndel.className = "name-del-btn";
 
         const writer = document.createElement('a');
         writer.innerHTML = post.writer.charAt(0).toUpperCase() + post.writer.slice(1);
@@ -267,6 +281,18 @@ function displayPosts(postbox, posts) {
             writer.href = `profile/${post.writer}`
         }
 
+        writerBtndel.append(writer);
+
+        if(posts.user_logged == post.writer) {
+            const delBtn = document.createElement('img');
+            delBtn.src = '/static/network/cross.png';
+            delBtn.height = '25';
+            delBtn.width = '25';
+            delBtn.className = 'del-btn';
+            delBtn.addEventListener('click', event => { deletePost(event); });
+            writerBtndel.append(delBtn);
+        }
+
         const content = document.createElement('p');
         content.innerHTML = post.content.charAt(0).toUpperCase() + post.content.slice(1);
 
@@ -274,7 +300,7 @@ function displayPosts(postbox, posts) {
         postId.innerHTML = post.id;
         postId.style.display = 'none';
 
-        div.append(writer, content, postId);
+        div.append(writerBtndel, content, postId);
 
         if (posts.user_logged) {
 

@@ -111,6 +111,10 @@ nav {
     margin: 2%;
 }
 
+.del-btn:hover {
+    cursor: pointer;
+}
+
 .name {
     cursor: pointer;
     font-size: 1.5rem;
