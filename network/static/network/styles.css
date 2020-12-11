@@ -9,6 +9,17 @@ body {
 .body {
     width: 100%;
 }
+/* Hide Small devices nav options */
+.toggled {
+    display: none;
+    text-align: center;
+    background-color: #0c6291;
+}
+
+.item-res {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
 .navbar {
     height: 5rem;

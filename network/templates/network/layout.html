@@ -25,7 +25,6 @@
             <button class="btn-nav-responsive"><span>=</span></button>
 
             <ul class="navbar-nav mr-auto">
-                
                 <li class="nav-item hide-sm">
                   <a class="nav-link" href="{% url 'index' %}">All Posts</a>
                 </li>
@@ -46,6 +45,29 @@
                 {% endif %}
             </ul>
         </nav>
+        <!-- Nave in small devices -->
+        <ul class="navbar-nav mr-auto toggled">    
+            <li class="toggle-items">
+                <div class="item-res">
+                    <a class="nav-link" href="{% url 'index' %}">All Posts</a>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="item-res">
+                  <a class="nav-link" href="{% url 'following' %}">Following</a>
+                </div>
+                <div class="item-res">
+                  <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </div>
+                {% else %}
+                <div class="item-res">
+                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </div>
+                <div class="item-res">
+                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </div>
+              {% endif %}
+            </li> 
+        </ul >
         
         <div class="body">
             {% block body %}

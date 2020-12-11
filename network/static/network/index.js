@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
         addPost();
     }
 
+    // Toggle of small devices navbar 
+    if(document.querySelector(".btn-nav-responsive")) {
+        document.querySelector(".btn-nav-responsive").addEventListener('click', toggleNav);
+    }
+
 });
 
 //------------ All Fetchs ------------
@@ -462,6 +467,16 @@ function previousPage(postbox, start) {
     const startPreviousPage = endPreviousPage - 10;
 
     fetchPosts(postbox, startPreviousPage, endPreviousPage);
+}
+
+// Small devices navbar toggle
+function toggleNav() {
+    if(document.querySelector(".toggled").style.display == 'block') {
+        document.querySelector(".toggled").style.display = 'none';
+    }
+    else {
+        document.querySelector(".toggled").style.display = 'block';   
+    }
 }
 
 // Function provided by Django to acquire the token
