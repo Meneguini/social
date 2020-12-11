@@ -173,8 +173,10 @@ body {
     padding: 5px;
 }
 
+/* Next and Back buttons */
+
 #btn-next {
-    margin-left: 190%;
+    margin-left: 92%;
 }
 
 .next-back-container {
@@ -354,7 +356,7 @@ body {
     }
 
     #btn-next {
-        margin-left: 170%;
+        margin-left: 85%;
     }
 
     .footer {
