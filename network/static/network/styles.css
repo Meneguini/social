@@ -90,8 +90,8 @@ body {
     width: 80%;
     border-radius: 30px;
     margin: 1%;
-    padding: 0.5%;
-    padding-left: 3%;
+    /* padding: 0.5%; */
+    /* padding-left: 3%; */
     margin-left: 10%;
 }
 
@@ -104,6 +104,8 @@ body {
     display: grid;
     grid-template-rows: auto 40% auto;
     grid-gap: 8px;
+    margin: 1%;
+    margin-left: 4%;
 }
 
 .name-del-btn {
@@ -129,13 +131,14 @@ body {
 .likes-datetime-edit {
     display: grid;
     grid-template-columns: 3% 5% 65% auto;
-    grid-gap: 4%;
-    /* padding-bottom: 2%; */
+    grid-gap: 2%;
+    align-items: start;
+    margin-bottom: 1%;
+    margin-right: 1%;
 }
 
 .likes {
     color: grey;
-    width: 100%;
 }
 
 .likes-number {
@@ -148,8 +151,8 @@ body {
 
 .edit {
     justify-self: end;
-    margin-right: 5%;
-    margin-bottom: 3%;
+    /* margin-right: 5%; */
+    /* margin-bottom: 3%; */
 }
 
 #textarea-edit {
@@ -271,9 +274,8 @@ body {
 
 /* Responsive for small devices */
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     #nav-resp {
-        height: 50vw;
-        font-size: 500px;
+
     }
-} */
+}
