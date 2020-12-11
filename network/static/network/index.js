@@ -434,7 +434,8 @@ function displayPosts(postbox, posts) {
         // document.querySelector('#next-back-container').append(nextBtn);
         
         if (!posts.previous_page) {
-            nextBtn.className = 'btn btn-primary btn-next';
+            nextBtn.className = 'btn btn-primary';
+            nextBtn.id = 'btn-next';
         }
         nextBackBtns.append(nextBtn);
     }

@@ -174,12 +174,20 @@ body {
 }
 
 #btn-next {
-    margin-left: 95%;
+    margin-left: 190%;
 }
 
-.next { 
-    margin-left: 90%;
+.next-back-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
 
+.btn-next-js {
+    justify-self: end;
+}
+.btn-back {
+    justify-self: start;
 }
 
 /* -------------- Profile -------------- */
@@ -345,22 +353,8 @@ body {
         font-size: 80%;
     }
 
-    .next-back-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
-
     #btn-next {
-        margin-left: 80%;
-    }
-
-    .btn-next-js {
-        justify-self: end;
-    }
-
-    .btn-back {
-        justify-self: start;
+        margin-left: 170%;
     }
 
     .footer {
