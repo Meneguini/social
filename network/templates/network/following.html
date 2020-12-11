@@ -28,7 +28,7 @@
                                 {% endif %}
                             {% endif %}
                             <p class="likes-number">{{ post.likes_number }}</p>
-                            <p>{{ post.datetime }}</p>
+                            <p class="datetime">{{ post.datetime }}</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                 {% endif %}
     
                 {% if page_obj.has_next %}
-                    <a class="btn btn-primary" id="btn-next" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="btn btn-primary" id="next-following" href="?page={{ page_obj.next_page_number }}">Next</a>
                 {% endif %}
             </span>
         

@@ -184,7 +184,7 @@ body {
     padding: 5px;
 }
 
-/* Next and Back buttons */
+/* Next and Back buttons (index page and profile page*/
 
 #btn-next {
     margin-left: 92%;
@@ -244,6 +244,22 @@ body {
     padding-top: 3%;
     height: 100px;
 }
+
+#next-following {
+    margin-left: 90%;
+}
+/* 
+.step-links {
+    text-align: center;
+} */
+
+/* #btn-back-following {
+    margin-bottom: -5.5%;
+} */
+/* 
+#btn-next-following {
+    justify-self: end;
+} */
 
 /* ----- login ------- */
 
@@ -367,7 +383,7 @@ body {
     }
 
     #btn-next {
-        margin-left: 85%;
+        margin-left: 84%;
     }
 
     .footer {
@@ -376,5 +392,21 @@ body {
         align-items: center;
         font-size: 70%;
     }
+
+    /* Following page */
+
+    .following-title {
+        padding-top: 8%;
+        height: 90px;
+    }
+
+    #next-following {
+        margin-left: 5%;
+        left: 0;
+    }
+
+    /* #btn-back-following {
+
+    } */
 
   }
