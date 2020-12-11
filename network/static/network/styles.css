@@ -152,10 +152,6 @@ body {
     color: grey;
 }
 
-.likes-number {
-    /* margin-left: 15%; */
-}
-
 .datetime {
     text-align: center;
 }
@@ -286,9 +282,13 @@ body {
 @media only screen and (max-width:620px) {
     /* For mobile phones: */
 
+    body{
+        padding-bottom: 20%;
+    }
+
     /* Navbar */
     .navbar {
-        font-size: 52%;
+        font-size: 53%;
     }
 
     .navbar-brand {
@@ -303,6 +303,71 @@ body {
         display: block;
         margin-left: 30%;
         margin-bottom: 2%;
+    }
+
+    /* Index */
+    #new-post-container {
+        padding: 3%;
+    }
+    
+    #new-post-content {
+        padding-left: 4%;
+    }
+    
+    #btn-new-post {
+        margin-top: 0.8%;
+        margin-left: 84%;
+    }
+
+    #post-parent {
+        padding: 2%;
+    }
+
+    .likes-datetime-edit {
+        grid-template-columns: 10% 5% 60% auto;
+        align-items: center;
+    }
+    
+    .likes-number {
+        padding-top: 50%;
+    }
+    
+    #empty-heart {
+        margin-right: 10%;
+    }
+
+    .datetime {
+        font-size: 80%;
+        align-self: end;
+    }
+    
+    .icons {
+        font-size: 80%;
+    }
+
+    .next-back-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    #btn-next {
+        margin-left: 80%;
+    }
+
+    .btn-next-js {
+        justify-self: end;
+    }
+
+    .btn-back {
+        justify-self: start;
+    }
+
+    .footer {
+        padding: 2%;
+        justify-items: center;
+        align-items: center;
+        font-size: 70%;
     }
 
   }

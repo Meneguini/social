@@ -413,22 +413,32 @@ function displayPosts(postbox, posts) {
  
     })
 
+    nextBackBtns = document.createElement('div');
+    nextBackBtns.className = 'next-back-container';
+    document.querySelector('#posts-container').append(nextBackBtns);
     
     if (posts.previous_page) {
         const previous = document.createElement('button');
         previous.innerHTML = 'Back';
-        previous.className = 'btn btn-primary';
+        previous.className = 'btn btn-primary btn-back';
         previous.addEventListener('click', () => previousPage(postbox, posts.start));
-        document.querySelector('#posts-container').append(previous);
+        // document.querySelector('.next-back-container').append(previous);
+        nextBackBtns.append(previous);
     }
 
     if (posts.next_page) {
         const nextBtn = document.createElement('button');
-        nextBtn.className = 'btn btn-primary next';
         nextBtn.innerHTML = 'Next';
         nextBtn.addEventListener('click', () => nextPage(postbox, posts.start));
-        document.querySelector('#posts-container').append(nextBtn);
+        nextBtn.className = 'btn btn-primary btn-next-js';
+        // document.querySelector('#next-back-container').append(nextBtn);
+        
+        if (!posts.previous_page) {
+            nextBtn.className = 'btn btn-primary btn-next';
+        }
+        nextBackBtns.append(nextBtn);
     }
+    
 }
 
 function nextPage(postbox, start) {
