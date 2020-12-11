@@ -55,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function deletePost(evt) {
 
-    console.log(evt.target.parentElement.parentElement.children[2].innerHTML);
-
     const csrftoken = getCookie('csrftoken');
 
     fetch(`/delete_post`, {
@@ -230,17 +228,14 @@ function updateDeleted(evt, msg) {
 function updateLike(evt, response) {
 
     if (response.msg == 'liked') {
-        evt.originalTarget.style.display = 'none';
-        // evt.target.parentElement.children[4].style.display = 'block';
+        evt.target.style.display = 'none';
         evt.target.parentElement.children[0].style.display = 'block';
     }
 
     if (response.msg == 'unliked') {
-        evt.originalTarget.style.display = 'none';
-        // evt.target.parentElement.children[5].style.display = 'block';
+        evt.target.style.display = 'none';
         evt.target.parentElement.children[1].style.display = 'block';
     }
-    // evt.target.parentElement.children[2].children[0].innerHTML = response.likes_number;
     evt.target.parentElement.children[2].innerHTML = response.likes_number;
 
 }
