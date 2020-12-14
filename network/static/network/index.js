@@ -127,9 +127,13 @@ function savePost(evt) {
         })
     })
     .then(response => response.json())
-    .then(saved => {
+    .then(result => {
         // after saving
-        updatePost(evt, content);
+        console.log(result);
+        displayMsg(result);
+        if (result.msg) {
+            updatePost(evt, content);
+        }
     })
     .catch(error => {
         console.log('Error: ', error);

@@ -68,6 +68,9 @@ def post(request):
     data = json.loads(request.body)
     if data.get("content") == "":
         return JsonResponse({"error": "There is no content"}, status=400)
+
+    if len(data.get("content")) > 300:
+        return JsonResponse({"unsuccessful": "Maximum 300 letters."}, status=400)
     
     post_id = int(data["idPost"])
     try:
@@ -76,7 +79,7 @@ def post(request):
         post.save()
     except:
         return JsonResponse({"error": "Post not found!"}, status=400)
-    return JsonResponse({"saved": True}, status=200)
+    return JsonResponse({"msg": "Changes saved."}, status=200)
 
 
 @login_required
