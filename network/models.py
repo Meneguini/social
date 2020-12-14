@@ -16,10 +16,8 @@ class Post(models.Model):
     datetime = models.DateTimeField(auto_now_add=True)
     likes_number = models.PositiveIntegerField(default=0)
 
-    # def __str__(self):
-    #     return f"{self.id}, {self.writer.username} wrote: {self.content} on {self.datetime}. It was liked by {self.likes_number} people."
 
-    # Returning dict instead of a string as cs50 did on mail project
+    # Returning dict instead of a string
     def serialize(self):
         return {
             "id": self.id,

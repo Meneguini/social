@@ -369,8 +369,13 @@ body {
         padding: 1%;
     }
 
+    .likes {
+        margin-right: 50%;
+        align-self: end;
+    }
+
     .likes-datetime-edit {
-        grid-template-columns: 10% 6% 60% auto;
+        grid-template-columns: 13% 4% 59% auto;
         align-items: center;
     }
     
