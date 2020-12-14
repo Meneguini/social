@@ -20,6 +20,13 @@ body {
     border-color: #0c6291;
     border-radius: 50%;
 }
+.alert {
+    text-align: center;
+}
+
+#passwordHelpBlock {
+    color: grey;
+}
 
 /* ------------- Nav -------------*/
 
@@ -366,10 +373,6 @@ body {
         padding-top: 50%;
         margin-left: 10%;
     }
-    
-    /* #empty-heart {
-        margin-right: 10%;
-    } */
 
     .datetime {
         font-size: 80%;

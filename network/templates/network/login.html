@@ -3,11 +3,13 @@
 
 {% block body %}
 
-    <h2 id="login-title">Login</h2>
-
     {% if message %}
-        <div>{{ message }}</div>
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
     {% endif %}
+
+    <h2 id="login-title">Login</h2>
 
     <form id="form-login" action="{% url 'login' %}" method="post">
         {% csrf_token %}
