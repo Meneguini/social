@@ -162,6 +162,11 @@ body {
     color: #0056b3;
 }
 
+.content {
+    overflow-wrap: break-word;
+
+}
+
 .likes-datetime-edit {
     display: grid;
     grid-template-columns: 3% 5% 65% auto;
@@ -386,6 +391,19 @@ body {
     #btn-next {
         margin-left: 84%;
     }
+
+    /* Edit post */
+
+    .edit {
+        margin-bottom: 18%;
+    }
+
+    #textarea-edit {
+        margin: 2%;
+        margin-left: 10%;
+    }
+
+    /* Footer */
 
     .footer {
         padding: 2%;

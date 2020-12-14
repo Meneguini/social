@@ -261,8 +261,9 @@ function updateLike(evt, response) {
 function updatePost(evt, content) {
     
     evt.target.parentElement.parentElement.children[0].children[1].innerHTML = content;
-    evt.target.parentElement.parentElement.children[0].style.display = 'block';
     evt.target.parentElement.parentElement.children[1].style.display = 'none';
+    evt.target.parentElement.parentElement.children[0].style.display = 'block';
+
 }
 
 function profileUpdate(details) {

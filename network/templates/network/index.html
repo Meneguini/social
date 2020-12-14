@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block body %}
-
-    
     <div id="index-page">
         <div class="msg"></div>
         <div class="alert alert-danger" role="alert" style="display: none;"></div>
@@ -34,7 +32,7 @@
                                 <img class="del-btn" src="{% static 'network/cross.png' %}" alt="cross" width="25" height="25">
                             {% endif %}
                         </div>
-                        <p>{{ post.content.capitalize }}</p>
+                        <p class="content">{{ post.content.capitalize }}</p>
 
                         <p style="display: none;">{{ post.id }}</p>
 
@@ -75,9 +73,7 @@
             {% endfor %} 
             
             {% if pages %}
-            <!-- <div class="next-back-container">  -->
                 <button class="btn btn-primary" id="btn-next">Next</button>
-            <!-- </div> -->
             {% endif %}
         </div>
     </div>
