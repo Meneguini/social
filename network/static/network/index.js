@@ -156,10 +156,8 @@ function addPost() {
         .then(response => response.json())
         .then(result => {
             // If you added the post successfully call fetchPosts to update the posts on the index page
-
-            if (result.msg) {
-                succesMsg(result.msg);
-            }
+            displayMsg(result);
+            
             return fetchPosts('all', 0, 10);
         })
         .catch(error => {
@@ -220,6 +218,17 @@ function fetchPosts(postbox, start, end) {
 
 // ------------- Elements updates -----------------
 
+// Display msg index page
+function displayMsg(result) {
+    if (result.msg) {
+        document.querySelector('.msg').innerHTML = result.msg;
+    }
+    if (result.unsuccessful) {
+        document.querySelector('.alert').innerHTML = result.unsuccessful;
+        document.querySelector('.alert').style.display = 'block';
+    }
+}
+
 // Remove deleted post from page
 function updateDeleted(evt, msg) {
 
@@ -276,10 +285,6 @@ function editPost(evt) {
     grandparent.children[1].style.display = 'block';
     grandparent.children[0].style.display = 'none';
     
-}
-
-function succesMsg(msg) {
-    document.querySelector('.msg').innerHTML = msg;
 }
 
 // ---------------- Create elements and insert in DOM ----------------

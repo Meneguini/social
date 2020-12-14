@@ -200,10 +200,10 @@ def new(request):
     content = info.get("content")
 
     if content == "":
-        return JsonResponse({"Error": "No content!"}, status=400)
+        return JsonResponse({"unsuccessful": "No content!"}, status=400)
 
     if len(content) > 300:
-        return JsonResponse({"Error": "Maximum 300 letters!"}, status=400)
+        return JsonResponse({"unsuccessful": "Maximum 300 letters!"}, status=400)
     # Adding new post to db
     new_post = Post.objects.create(writer=request.user, content=content)
     new_post.save()
