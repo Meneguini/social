@@ -34,13 +34,13 @@
                 </div>
             {% endfor %}
             
-            <span class="step-links">
+            <span {% if page_obj.has_previous %}class="step-links next-back-container"{% else %}class="step-links"{% endif %}>
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}">Back</a>
+                    <a class="btn btn-primary btn-back" href="?page={{ page_obj.previous_page_number }}">Back</a>
                 {% endif %}
     
                 {% if page_obj.has_next %}
-                    <a class="btn btn-primary" id="next-following" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a {% if page_obj.has_previous %}class="btn btn-primary btn-next-js"{% else %}class="btn btn-primary" id="btn-next"{% endif %} href="?page={{ page_obj.next_page_number }}">Next</a>
                 {% endif %}
             </span>
         

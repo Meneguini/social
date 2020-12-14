@@ -1,4 +1,4 @@
-/* ------------- Nav ------------*/
+/* ------------- Body ------------*/
 body {
     position: relative;
     min-height: 100vh;
@@ -9,6 +9,20 @@ body {
 .body {
     width: 100%;
 }
+
+/* Margin of all pages */
+#index-page, #profile-page, #following-page {
+    padding: 1%;
+}
+/* buttons */
+.btn-primary {
+    background-color: #0c6291;
+    border-color: #0c6291;
+    border-radius: 50%;
+}
+
+/* ------------- Nav -------------*/
+
 /* Hide Small devices nav options */
 .toggled {
     display: none;
@@ -57,16 +71,7 @@ body {
     display: none;
 }
 
-/* Margin of all pages */
-#index-page, #profile-page, #following-page {
-    padding: 1%;
-}
-/* buttons */
-.btn-primary {
-    background-color: #0c6291;
-    border-color: #0c6291;
-    border-radius: 50%;
-}
+
 /* ------------- Index -------------- */
 
 #login-msg {
@@ -184,7 +189,7 @@ body {
     padding: 5px;
 }
 
-/* Next and Back buttons (index page and profile page*/
+/* Next and Back buttons (index page, following and profile page*/
 
 #btn-next {
     margin-left: 92%;
@@ -248,20 +253,8 @@ body {
 #next-following {
     margin-left: 90%;
 }
-/* 
-.step-links {
-    text-align: center;
-} */
 
-/* #btn-back-following {
-    margin-bottom: -5.5%;
-} */
-/* 
-#btn-next-following {
-    justify-self: end;
-} */
-
-/* ----- login ------- */
+/* ------------ Login ------------ */
 
 #login-title, #register-title {
     text-align: center;
@@ -338,8 +331,12 @@ body {
 
     .btn-nav-responsive {
         display: block;
-        margin-left: 30%;
+        margin-left: 28%;
         margin-bottom: 2%;
+    }
+
+    #btn-nave-space {
+        margin-left: 48%;
     }
 
     /* Index */
@@ -357,21 +354,22 @@ body {
     }
 
     #post-parent {
-        padding: 2%;
+        padding: 1%;
     }
 
     .likes-datetime-edit {
-        grid-template-columns: 10% 5% 60% auto;
+        grid-template-columns: 10% 6% 60% auto;
         align-items: center;
     }
     
     .likes-number {
         padding-top: 50%;
+        margin-left: 10%;
     }
     
-    #empty-heart {
+    /* #empty-heart {
         margin-right: 10%;
-    }
+    } */
 
     .datetime {
         font-size: 80%;
@@ -400,13 +398,9 @@ body {
         height: 90px;
     }
 
-    #next-following {
-        margin-left: 5%;
-        left: 0;
+    /* Login and Register */
+    #form-login, #form-register {
+        width: 70%;
+        margin-left: 15%;
     }
-
-    /* #btn-back-following {
-
-    } */
-
   }

@@ -22,7 +22,7 @@
                 <!-- </li> -->
             {% endif %}
 
-            <button class="btn-nav-responsive"><span>=</span></button>
+            <button class="btn-nav-responsive" {% if not user.is_authenticated %}id="btn-nave-space"{% endif %}><span>=</span></button>
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item hide-sm">

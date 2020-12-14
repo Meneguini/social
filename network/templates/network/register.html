@@ -1,4 +1,5 @@
 {% extends "network/layout.html" %}
+{% load static %}
 
 {% block body %}
 
@@ -27,4 +28,8 @@
 
     <p id="login-here">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
 
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
 {% endblock %}
